@@ -1,0 +1,14 @@
+id,scorecard_id,record_id,score,bucket,reason_codes,input_data,created_at
+1,1,APP001,87.50,A,"[""High Credit Score"", ""Stable Income""]","{""income"": 50000, ""creditScore"": 750, ""employmentYears"": 5}",2025-06-23 10:54:14.65044
+2,1,APP002,72.30,B,"[""Average Credit Score"", ""Good Payment History""]","{""income"": 45000, ""creditScore"": 680, ""employmentYears"": 3}",2025-06-23 10:54:14.65044
+3,2,BIZ001,81.20,A,"[""Strong Cash Flow"", ""Good Banking Behavior""]","{""revenue"": 500000, ""accountBalance"": 50000, ""transactionVolume"": ""High""}",2025-06-23 10:54:14.65044
+4,2,BIZ002,68.90,B,"[""Moderate Cash Flow"", ""Average Banking""]","{""revenue"": 300000, ""accountBalance"": 25000, ""transactionVolume"": ""Medium""}",2025-06-23 10:54:14.65044
+5,1,,,,,"{""bulkJobId"":1750690633395,""recordCount"":0}",2025-06-23T14:57:13.395Z
+6,1,BULK_SIM_1750690758901,74.9,B,"[""Bulk Simulation""]","{""totalRecords"":1,""approvalRate"":100}",2025-06-23T14:59:18.901Z
+7,1,,,,,"{""bulkJobId"":1750690758947,""recordCount"":1}",2025-06-23T14:59:18.947Z
+8,1,BULK_SIM_1750690807115,39.32,D,"[""Bulk Simulation""]","{""totalRecords"":1,""approvalRate"":0}",2025-06-23T15:00:07.115Z
+9,1,,,,,"{""bulkJobId"":1750690807158,""recordCount"":1}",2025-06-23T15:00:07.158Z
+10,1,BULK_SIM_1750690849553,78.87,B,"[""Bulk Simulation""]","{""totalRecords"":1,""approvalRate"":100}",2025-06-23T15:00:49.553Z
+11,1,,,,,"{""bulkJobId"":1750690849595,""recordCount"":1}",2025-06-23T15:00:49.595Z
+12,1,BULK_SIM_1750690893126,54.51,D,"[""Bulk Simulation""]","{""totalRecords"":1,""approvalRate"":0}",2025-06-23T15:01:33.126Z
+13,1,BULK_1750690893210,32.38,D,"[""Bulk Processing""]","{""bulkJobId"":1750690893210,""recordCount"":1,""approvalRate"":0}",2025-06-23T15:01:33.210Z

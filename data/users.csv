@@ -1,0 +1,6 @@
+id,name,email,password_hash,role,organization_id,is_active,default_module,access_matrix,last_login_at,created_at,updated_at
+1,Demo Admin,admin@demo.com,$2b$10$I1AO.R1ZblCpppu0ABkbIeWBwepgU9I5EOyt5R/p3nO.YJJTJxuLG,Admin,1,t,Dashboard,,2025-06-23 10:57:12.221,2025-06-23 10:53:33.240521,2025-06-23 10:57:12.221
+2,Test User,test@example.com,$2b$10$TBMGMIA6czCzb0ui1wQpSOeOFijguybKBhTbL68nXx1C6u.DP2Sra,User,1,t,Dashboard,,,2025-06-23T11:57:14.849Z,2025-06-23T11:57:14.849Z
+3,Test Final,testfinal@example.com,$2b$10$RMHOUscKTtowiI0DpqyEQO.JfNvh8YcgEQ6PbP4q6k6iwksC3iEdK,User,1,t,Dashboard,,,2025-06-23T12:03:31.046Z,2025-06-23T12:03:31.046Z
+4,new,new@gmail.com,$2b$10$7n16b8LBJ0GAocmj1jhYluq31JYP/NkJDn6n9K25sqSyCOhDTn0OS,Admin,1,t,Dashboard,,,2025-06-23T12:04:47.856Z,2025-06-23T12:04:47.856Z
+5,Yoki,yokeswari@finequs.com,$2b$10$bx5VPjGr../Gcgupias9E.qoTmZIjepRWUO1kSq9ogND3ANET6MhK,Power User,1,t,Dashboard,,,2025-06-23T16:04:46.832Z,2025-06-23T16:04:46.832Z

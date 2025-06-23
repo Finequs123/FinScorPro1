@@ -1,0 +1,2 @@
+id,name,code,type,contact_email,description,address,phone,website,business_reg_number,license_number,regulatory_authority,established_year,annual_revenue,employee_count,branding,features,settings,status,created_at,updated_at
+1,Demo Organization,DEMO_ORG,Fintech,admin@demo.com,Demo organization for testing,123 Demo Street,+1-555-0123,https://demo.example.com,,,,,,,,,,Active,2025-06-23 10:53:31.201413,2025-06-23 10:53:31.201413
