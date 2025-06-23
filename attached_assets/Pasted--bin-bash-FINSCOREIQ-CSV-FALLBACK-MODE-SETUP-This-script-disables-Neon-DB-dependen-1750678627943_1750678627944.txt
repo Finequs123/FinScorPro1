@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# === FINSCOREIQ CSV FALLBACK MODE SETUP ===
+# This script disables Neon DB dependency and switches to local CSV-based data persistence.
+# Use only in development or restricted environments like Replit where true local DB is not possible.
+
+set -e
+
+ALERT="🚨 WARNING: Switching to CSV-based storage disables all PostgreSQL queries. This mode is intended ONLY for local, single-user, non-production testing. All DB-backed logic must be refactored manually to read/write from CSV files."
+echo "$ALERT"
+
+# STEP 1: Create data directory if missing
+mkdir -p ./data
+
+# STEP 2: Place sample CSVs (you can replace with exported data later)
+echo "id,name,email\n1,Alice,alice@example.com\n2,Bob,bob@example.com" > ./data/users.csv
+echo "id,title,score\n1,Scorecard A,85\n2,Scorecard B,92" > ./data/scorecards.csv
+
+# STEP 3: Copy fallback CSV utility into server/csv
+mkdir -p ./server/csv
+cat > ./server/csv/users.ts <<EOF
+import fs from 'fs';
+import csv from 'csv-parser';
+
+export async function getUsers(): Promise<any[]> {
+  const results: any[] = [];
+  return new Promise((resolve, reject) => {
+    fs.createReadStream('./data/users.csv')
+      .pipe(csv())
+      .on('data', (row) => results.push(row))
+      .on('end', () => resolve(results))
+      .on('error', (err) => reject(err));
+  });
+}
+EOF
+
+cat > ./server/csv/scorecards.ts <<EOF
+import fs from 'fs';
+import csv from 'csv-parser';
+
+export async function getScorecards(): Promise<any[]> {
+  const results: any[] = [];
+  return new Promise((resolve, reject) => {
+    fs.createReadStream('./data/scorecards.csv')
+      .pipe(csv())
+      .on('data', (row) => results.push(row))
+      .on('end', () => resolve(results))
+      .on('error', (err) => reject(err));
+  });
+}
+EOF
+
+# STEP 4: Alert to developer to refactor DB usage
+cat > ./CSV_MODE_ALERT.md <<DOC
+=== CSV FALLBACK MODE ACTIVATED ===
+
+Your application has been reconfigured to use CSV-based local data instead of a remote PostgreSQL database.
+
+⚠️ THIS IS A TEMPORARY DEVELOPMENT MODE ONLY
+- No support for joins, filters, transactions
+- All logic must now use ./server/csv/*.ts utilities
+- Do NOT use this in production
+
+CSV files:
+- ./data/users.csv
+- ./data/scorecards.csv
+
+Switch logic in app entry points from DB imports to CSV utilities accordingly.
+DOC
+
+echo "✅ CSV fallback mode setup complete. Please check ./CSV_MODE_ALERT.md for next steps."
+exit 0
